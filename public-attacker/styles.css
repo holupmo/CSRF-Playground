@@ -1,0 +1,305 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 10%,
+      rgba(154,89,105,.25),
+      transparent 40%
+    ),
+    #130f1b;
+
+  color: #f9eff1;
+
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.attacker-shell {
+  width: min(560px, calc(100% - 28px));
+  margin: 36px auto;
+}
+
+.warning-strip {
+  font: 9px Consolas, monospace;
+  letter-spacing: 1px;
+
+  color: #ffc0b7;
+
+  border: 1px solid rgba(255,151,139,.23);
+  background: rgba(255,151,139,.07);
+
+  padding: 10px 13px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.warning-strip span {
+  margin-right: 7px;
+}
+
+.offer-card {
+  overflow: hidden;
+
+  background: #fffaf5;
+  color: #382b35;
+
+  border-radius: 18px;
+
+  box-shadow: 0 25px 80px rgba(0,0,0,.35);
+}
+
+.offer-nav,
+.offer-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 18px 23px;
+
+  border-bottom: 1px solid #eee4e0;
+}
+
+.offer-logo {
+  font-weight: 800;
+  letter-spacing: -.5px;
+  font-size: 15px;
+}
+
+.offer-logo span {
+  color: #b36b79;
+  margin-right: 5px;
+}
+
+.ad-label,
+.offer-foot {
+  font: 8px Consolas, monospace;
+  letter-spacing: 1px;
+  color: #a18f91;
+}
+
+.offer-body {
+  padding: 38px 30px 30px;
+}
+
+.eyebrow {
+  font: 9px Consolas, monospace;
+  letter-spacing: 1.5px;
+  color: #b16d7a;
+}
+
+h1 {
+  font-size: 47px;
+  line-height: 1.02;
+  letter-spacing: -2px;
+  margin: 14px 0 13px;
+}
+
+h1 em {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  color: #b56f7b;
+}
+
+.description {
+  color: #7d7075;
+  font-size: 12px;
+  line-height: 1.7;
+  max-width: 380px;
+}
+
+.bonus-box {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  border: 1px dashed #d8b4b5;
+  background: #fff2ee;
+
+  padding: 15px;
+  border-radius: 12px;
+  margin: 24px 0;
+}
+
+.gift {
+  width: 40px;
+  height: 40px;
+
+  display: grid;
+  place-items: center;
+
+  background: #f3d9d5;
+  border-radius: 11px;
+
+  color: #a65f6d;
+  font-size: 23px;
+}
+
+.bonus-box b,
+.bonus-box small {
+  display: block;
+}
+
+.bonus-box b {
+  font-size: 12px;
+}
+
+.bonus-box small {
+  font-size: 9px;
+  color: #9c898d;
+  margin-top: 4px;
+}
+
+.sparkle {
+  margin-left: auto;
+  color: #c27b85;
+}
+
+.claim-button {
+  width: 100%;
+
+  border: 0;
+  border-radius: 10px;
+
+  padding: 15px 17px;
+
+  background: #3b2937;
+  color: #fff9f6;
+
+  font: 700 12px Manrope, sans-serif;
+
+  cursor: pointer;
+}
+
+.claim-button:hover {
+  background: #553849;
+}
+
+.claim-button span {
+  float: right;
+  font-size: 18px;
+  line-height: 13px;
+}
+
+.feedback {
+  font-size: 9px;
+  line-height: 1.6;
+  color: #9b8c8f;
+  margin: 12px 0 0;
+  min-height: 28px;
+}
+
+.hidden-frame {
+  display: none;
+}
+
+.offer-foot {
+  border-top: 1px solid #eee4e0;
+  border-bottom: 0;
+  padding: 13px 23px;
+}
+
+.explain-card {
+  margin-top: 16px;
+  padding: 21px;
+
+  background: #211a2b;
+
+  border: 1px solid #3b2c44;
+  border-radius: 14px;
+}
+
+.explain-card h2 {
+  font-size: 14px;
+  margin: 0 0 9px;
+}
+
+.explain-card p {
+  font-size: 10px;
+  line-height: 1.7;
+  color: #b8aeba;
+}
+
+.origin-pair {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+
+  padding: 12px;
+
+  background: #171320;
+  border: 1px solid #3a2b43;
+  border-radius: 9px;
+}
+
+.origin-pair small,
+.origin-pair b {
+  display: block;
+}
+
+.origin-pair small {
+  font: 8px Consolas, monospace;
+  color: #a88ba0;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.origin-pair b {
+  font: 10px Consolas, monospace;
+  color: #f1dce8;
+}
+
+.origin-pair > span {
+  color: #d18aa1;
+}
+
+.caution {
+  padding-left: 10px;
+  border-left: 2px solid #d39b72;
+  color: #d8bcae !important;
+}
+
+.back-link {
+  display: inline-block;
+  color: #e5a2b0;
+  text-decoration: none;
+  font-size: 10px;
+  margin-top: 7px;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  font: 8px Consolas, monospace;
+  letter-spacing: 1px;
+  color: #796b7d;
+  margin: 20px 0;
+}
+
+@media(max-width:480px) {
+
+  .attacker-shell {
+    margin: 18px auto;
+  }
+
+  .offer-body {
+    padding: 30px 22px;
+  }
+
+  h1 {
+    font-size: 41px;
+  }
+
+  .origin-pair b {
+    font-size: 8px;
+  }
+
+}
